@@ -1,13 +1,23 @@
+server:
+  port: 8088
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+
 spring:
   application:
     name: spring-gateway
   cloud:
     gateway:
       routes:
-        - id: eureka-client
-          uri: lb://eureka-client
+        - id: shoppera
+          uri: lb://shoppera
           predicates:
-            - Path=/client/**
+            - Path=/brand/**
       discovery:
         locator:
           enabled: true
